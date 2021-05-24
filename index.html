@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="HTML CSS JavaScript">
+  <meta name="description" content="Creating Login Form to check all validations">
+  <meta author="author" content="Desh Deepak">
+  <title>Form Validation Project</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="style.js" defer></script>
+</head>
+
+<body>
+
+  <form name="Form" class="form" onsubmit="return validateForm()">
+    <span></span>
+    <div class="header">
+      <h2>Welcome To <span class="highlight">Groww<span></h2>
+    </div>
+    <div class="animbox">
+      <input class="textInput" type="text" name="name" id="name" required>
+      <div class="underline"></div>
+      <label class="inputLabel">Employee Name</label>
+      <div class="error" id="nameErr"></div>
+    </div>
+
+    <div class="animbox">
+      <input class="textInput" type="text" name="email" id="email" required>
+      <div class="underline"></div>
+      <label class="inputLabel">Email Address</label>
+      <div class="error" id="emailErr"></div>
+    </div>
+
+    <div class="animbox">
+      <input class="textInput" type="password" name="password" id="password" required>
+      <div class="underline"></div>
+      <label class="inputLabel">Password</label>
+      <div class="error" id="passwordErr"></div>
+    </div>
+
+    <div class="animbox">
+      <input class="textInput" type="text" name="mobile" id="mobile" required>
+      <div class="underline"></div>
+      <label class="inputLabel">Mobile Number</label>
+      <div class="error" id="mobileErr"></div>
+    </div>
+
+    <div class="animbox">
+      <input class="textInput" type="text" name="employeeId" id="employeeId" required>
+      <div class="underline"></div>
+      <label class="inputLabel">Employee ID</label>
+      <div class="error" id="employeeIdErr"></div>
+    </div>
+
+    <div class="box">
+      <label class="inputLabel gender">Gender</label>
+      <div class="form-inline" id="gender">
+        <label class="inlineLabel"><input class="genderRadio" type="radio" name="gender" value="Male"
+            required>Male</label>
+        <label class="inlineLabel"><input class="genderRadio" type="radio" name="gender" value="Female"
+            required>Female</label>
+        <label class="inlineLabel"><input class="genderRadio" type="radio" name="gender" value="Others"
+            required>Others</label>
+      </div>
+      <div class="error" id="genderErr"></div>
+    </div>
+
+    <div class="box">
+      <label class="inputLabel birthdate">Birth Date</label>
+      <input class="dateInput" type="date" name="birthDate" id="birthDate" required>
+      <div class="error" id="birthDateErr"></div>
+    </div>
+
+    <div class="box">
+      <label class="inputLabel teams">Teams</label>
+      <select class="select" name="teams" id="team" required>
+        <option disabled selected>Select Your Team</option>
+        <option>Frontend Development</option>
+        <option>Backend development</option>
+        <option>App Development</option>
+        <option>IOS development</option>
+      </select>
+      <div class="error" id="teamsErr"></div>
+    </div>
+
+    <div class="box">
+      <input class="submitBtn" type="submit" value="Submit">
+    </div>
+  </form>
+
+</body>
+
+</html>
