@@ -152,3 +152,15 @@ body {
 .select{
   background-color: white;
 }
+
+
+@media only screen and (max-width: 600px)
+{
+  body{
+    width:100%;
+  }
+  .form{
+    width: 200px;
+    margin-top:30px;
+  }
+}
