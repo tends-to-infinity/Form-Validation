@@ -1,8 +1,14 @@
-function printError(ID, Msg) {
-  document.getElementById(ID).innerHTML = Msg;
+function printError(id, msg) {
+  document.getElementById(id).innerHTML = msg;
 }
 
-function validateForm() {
+let form = document.getElementById('form');
+form.addEventListener('submit', validateForm);
+
+
+function validateForm(event) {
+
+  event.preventDefault();
   let name = document.Form.name;
   let email = document.Form.email;
   let password = document.Form.password;
@@ -38,7 +44,7 @@ function validateForm() {
 }
 
 function validateName(name) {
-  if (name.value == "") {
+  if (name.value.trim() == "") {
     printError("nameErr", "Please Enter Your Name");
     name.focus();
     return false;
@@ -56,7 +62,7 @@ function validateName(name) {
 }
 
 function validateEmail(email) {
-  if (email.value == "") {
+  if (email.value.trim() == "") {
     printError("emailErr", "Please Enter Your Email Address");
     email.focus();
     return false;
@@ -73,7 +79,7 @@ function validateEmail(email) {
 }
 
 function validatePassword(password) {
-  if (password.value == "") {
+  if (password.value.trim() == "") {
     printError("passwordErr", "Please Enter Your Password");
     password.focus();
     return false;
@@ -91,7 +97,7 @@ function validatePassword(password) {
 }
 
 function validateMobile() {
-  if (mobile.value == "") {
+  if (mobile.value.trim() == "") {
     printError("mobileErr", "Please Enter Your Mobile Number");
     mobile.focus();
     return false;
@@ -194,3 +200,13 @@ document.querySelector("#birthDate").addEventListener("mouseenter", (el) => {
 document.querySelector("#birthDate").addEventListener("mouseleave", (el) => {
   birthDateLabel.style.color = "#9a9ca7";
 });
+
+
+fetch("teams.json").then(
+  response => response.json()
+).then(data => {
+  data.forEach(element => {
+    document.querySelector("#team").innerHTML += "<option>" + element + "</option>";
+  });
+})
+
