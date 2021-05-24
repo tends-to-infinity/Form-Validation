@@ -2,6 +2,14 @@ function printError(id, msg) {
   document.getElementById(id).innerHTML = msg;
 }
 
+fetch("teams.json").then(
+  response => response.json()
+).then(data => {
+  data.forEach(element => {
+    document.querySelector("#team").innerHTML += "<option>" + element + "</option>";
+  });
+})
+
 let form = document.getElementById('form');
 form.addEventListener('submit', validateForm);
 
@@ -202,11 +210,5 @@ document.querySelector("#birthDate").addEventListener("mouseleave", (el) => {
 });
 
 
-fetch("teams.json").then(
-  response => response.json()
-).then(data => {
-  data.forEach(element => {
-    document.querySelector("#team").innerHTML += "<option>" + element + "</option>";
-  });
-})
+
 
