@@ -179,7 +179,7 @@ function validateBirthdate(birthdate) {
     return true;
   }
   else {
-    printError("birthDateErr", "Invalid date");
+    printError("birthDateErr", "Invalid DOB");
     birthdate.focus();
     return false;
   }
