@@ -96,7 +96,7 @@ function validatePassword(password) {
     if (password.value.match(regex)) {
       return true;
     } else {
-      printError("passwordErr", "min 5characters Alteast(1upper + 1lower)Alphabets+1digit "
+      printError("passwordErr", "min 5characters Alteast(1upper&1lower)Alphabets & 1digit"
       );
       password.focus();
       return false;
