@@ -160,12 +160,26 @@ function validateGender(gender) {
   }
 }
 
+
+function checkDOB() {
+  var dateString = document.getElementById('birthDate').value;
+  var myDate = new Date(dateString);
+  var today = new Date();
+  console.log(today);
+  console.log(myDate);
+  if (myDate > today) {
+    return false;
+  }
+  return true;
+}
+
 function validateBirthdate(birthdate) {
-  let date = birthdate.value;
-  if (date != "") {
+
+  if (checkDOB()) {
     return true;
-  } else {
-    printError("birthdateErr", "Invalid date format");
+  }
+  else {
+    printError("birthDateErr", "Invalid date");
     birthdate.focus();
     return false;
   }
